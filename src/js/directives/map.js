@@ -3,7 +3,8 @@ hotelApp
 		return {
 			restrict: 'A',
 			scope: {
-				mapInit: "="
+				mapInit: "=",
+				mapEditor: "="
 			},
 			link: function(scope, elem, attr) {	
 				var map;
@@ -28,18 +29,18 @@ hotelApp
 
 					        map.events.add('click', function (e) {
 							    // Получение координат щелчка
-							    var coords = e.get('coords');
-							    console.log(coords);
+								if (scope.mapEditor) {
+									var coords = e.get('coords');
+									console.log(coords);
 
-							    var myPlacemark = new ymaps.Placemark([coords[0], coords[1]], {}, {
-							        iconLayout: 'default#image',
-							        iconImageHref: '../img/eye.png',
-							        iconImageSize: [48, 48],
-							        iconImageOffset: [0, 0]
-							    });
-							    map.geoObjects.add(myPlacemark);
-
-					
+									var myPlacemark = new ymaps.Placemark([coords[0], coords[1]], {}, {
+										iconLayout: 'default#image',
+										iconImageHref: '../img/eye.png',
+										iconImageSize: [48, 48],
+										iconImageOffset: [0, 0]
+									});
+									map.geoObjects.add(myPlacemark);
+								}
 							});
 
 					        var myPlacemark = new ymaps.Placemark([44.95719, 34.11079], {}, {
