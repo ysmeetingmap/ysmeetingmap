@@ -35,9 +35,9 @@ hotelApp
 
 									var myPlacemark = new ymaps.Placemark([coords[0], coords[1]], {}, {
 										iconLayout: 'default#image',
-										iconImageHref: '../img/eye.png',
-										iconImageSize: [48, 48],
-										iconImageOffset: [0, 0]
+										iconImageHref: '../img/baloon24.png',
+										iconImageSize: [24, 24],
+										iconImageOffset: [-12, -12]
 									});
 									map.geoObjects.add(myPlacemark);
 								}
@@ -45,8 +45,8 @@ hotelApp
 
 					        var myPlacemark = new ymaps.Placemark([44.95719, 34.11079], {}, {
 						        iconLayout: 'default#image',
-						        iconImageHref: '../img/eye.png',
-						        iconImageSize: [48, 48],
+						        iconImageHref: '../img/baloon24.png',
+						        iconImageSize: [24, 24],
 						        iconImageOffset: [0, 0]
 						    });
 						    map.geoObjects.add(myPlacemark);

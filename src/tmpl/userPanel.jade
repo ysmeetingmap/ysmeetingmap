@@ -1,4 +1,8 @@
 .user-panel(data-ng-show="mapInit")
 	ul.user-panel-list
-		li.user-panel-list__item(data-ng-class="{'user-panel-list__item_active': mapEditor}" data-ng-click="changeMapState()" data-ng-repeat="item in menu") {{item.color}} {{mapInit}}
+		li.user-panel-list__item(
+			data-ng-class="{'user-panel-list__item_active': mapEditor}"
+			data-ng-click="changeMapState()"
+			data-ng-repeat="item in menu")
+
 		div(data-ys-preloader="" data-flag="mapInit")
