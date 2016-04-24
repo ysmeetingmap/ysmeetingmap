@@ -1,5 +1,5 @@
 hotelApp
-	.directive('ysMap', ['srvcInited', '$rootScope', function(srvcInited, $rootScope) {
+	.directive('ysMap', ['srvcInited', '$rootScope', '$state', function(srvcInited, $rootScope, $state) {
 		return {
 			restrict: 'A',
 			scope: {
@@ -8,7 +8,11 @@ hotelApp
 			},
 			link: function(scope, elem, attr) {	
 				var map;
-				
+
+				scope.$on('$stateChangeSuccess', function() {
+					console.log('url changed');
+				});
+
 				if (!$rootScope.mapInit) {
 					$rootScope.mapInit = true;
 					var mapScr = document.createElement("script");
